@@ -57,7 +57,8 @@
     "test": "npm run test:js && npm run test:package",
     "check": "tsc --noEmit -p tsconfig.check.json",
     "lint": "eslint",
-    "install": "pwd && python3 -m venv env && env/bin/python -m pip install esphome",
+    "ainstall": "pwd && python3 -m venv env && env/bin/python -m pip install esphome",
+    "postinstall": "node scripts/install.mjs",
     "nopy": "nopy",
     "npip": "npip",
     "dashboard": "pwd && env/bin/esphome dashboard"
