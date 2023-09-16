@@ -1,2 +1,2 @@
 import { execSync } from 'child_process';
-execSync('pwd && python3 -m venv env && env/bin/python -m pip install esphome');
+execSync('pwd && python3 -m venv env && python3 env/bin/pip install esphome');
