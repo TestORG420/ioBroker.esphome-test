@@ -21,16 +21,17 @@ async function run(): Promise<void> {
     if ((currentDashboardVersion != latestDashboardVersion) || (currentPythonVersion != latestPythonVersion)) {
         console.info('new version(s) found');
 
-        $$`npm pkg set iobroker_esphome_adapter.dashboard_version=${latestDashboardVersion}`;
-        $$`npm pkg set iobroker_esphome_adapter.python_version=${latestPythonVersion}`;
+        await $$`npm pkg set iobroker_esphome_adapter.dashboard_version=${latestDashboardVersion}`;
+        await $$`npm pkg set iobroker_esphome_adapter.python_version=${latestPythonVersion}`;
 
-        const UPDATE_MSG = `(CI) Update integrated Dashboard from Version ${currentDashboardVersion} to ${latestDashboardVersion} and Python from Version ${currentPythonVersion} to ${latestDashboardVersion}.`
+        const UPDATE_MSG = `(CI) Update integrated Dashboard from Version ${currentDashboardVersion} to ${latestDashboardVersion} and Python from Version ${currentPythonVersion} to ${latestPythonVersion}.`
 
-        $$`git config user.email "you@example.com"`;
-        $$`git config user.name "Your Name"`;
+        await $$`git config user.email "you@example.com"`;
+        await $$`git config user.name "Your Name"`;
 
-        $$`git commit --all --message ${UPDATE_MSG}`;
-        $$`git push`;
+        await $$`git add package.json`;
+        await $$`git commit --message ${UPDATE_MSG}`;
+        await $$`git push`;
 
         // $$`npm run release -- patch --dry --yes --additional-changelog "* ${UPDATE_MSG}"`;
     }
