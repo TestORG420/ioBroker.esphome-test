@@ -26,6 +26,9 @@ async function run(): Promise<void> {
 
         const UPDATE_MSG = `(CI) Update integrated Dashboard from Version ${currentDashboardVersion} to ${latestDashboardVersion} and Python from Version ${currentPythonVersion} to ${latestDashboardVersion}.`
 
+        $$`git config user.email "you@example.com"`;
+        $$`git config user.name "Your Name"`;
+
         $$`git commit --all --message "${UPDATE_MSG}"`;
         $$`git push`;
 
