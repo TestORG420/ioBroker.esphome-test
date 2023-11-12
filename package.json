@@ -69,6 +69,6 @@
   "readmeFilename": "README.md",
   "iobroker_esphome_adapter": {
     "python_version": "3.12",
-    "dashboard_version": "2023.11.0b3"
+    "dashboard_version": "2023.10.0"
   }
 }

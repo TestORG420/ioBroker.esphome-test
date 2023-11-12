@@ -29,7 +29,7 @@ async function run(): Promise<void> {
         $$`git config user.email "you@example.com"`;
         $$`git config user.name "Your Name"`;
 
-        $$`git commit --all --message "${UPDATE_MSG}"`;
+        $$`git commit --all --message ${UPDATE_MSG}`;
         $$`git push`;
 
         // $$`npm run release -- patch --dry --yes --additional-changelog "* ${UPDATE_MSG}"`;
