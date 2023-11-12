@@ -26,7 +26,8 @@ async function run(): Promise<void> {
 
         const UPDATE_MSG = `(CI) Update integrated Dashboard from Version ${currentDashboardVersion} to ${latestDashboardVersion} and Python from Version ${currentPythonVersion} to ${latestDashboardVersion}.`
 
-        // $$`git commit --all --message "${UPDATE_MSG}"`;
+        $$`git commit --all --message "${UPDATE_MSG}"`;
+        $$`git push`;
 
         // $$`npm run release -- patch --dry --yes --additional-changelog "* ${UPDATE_MSG}"`;
     }
