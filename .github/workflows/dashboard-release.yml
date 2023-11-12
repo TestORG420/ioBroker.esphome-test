@@ -1,6 +1,7 @@
 name: Scheduled Dashboard Release
 
 on:
+  workflow_dispatch: # Manually triggered
   schedule:
     - cron: '20 4 * * 6'
 
