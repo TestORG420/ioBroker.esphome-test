@@ -31,9 +31,8 @@ async function run(): Promise<void> {
 
         await $$`git add package.json`;
         await $$`git commit --message ${UPDATE_MSG}`;
-        await $$`git push`;
 
-        await $$`npm run release -- patch --dry --yes --additional-changelog "* ${UPDATE_MSG}"`;
+        await $$`npm run release -- patch --yes --additional-changelog "* ${UPDATE_MSG}"`;
     }
 }
 
